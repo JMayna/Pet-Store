@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Pet_Store
 {
-    internal class Product
+    public class Product
     {
         public string Name { get; set; }
         public decimal Price { get; set; }
