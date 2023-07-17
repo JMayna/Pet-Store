@@ -19,13 +19,31 @@ while (userInput.ToLower() != "exit") //While the user has not typed "exit" the 
 {
     if (userInput == "1")
     {
+        Product product = new Product();
         DogLeash dogLeash = new DogLeash();
 
+        //Product Info
+
+        Console.WriteLine("Item name: ");
+        product.Name = Console.ReadLine();
+
+        Console.WriteLine("Price: ");
+        product.Price = int.Parse(Console.ReadLine());
+
+        Console.WriteLine("Quantity: ");
+        product.Quantity = int.Parse(Console.ReadLine());
+
+        Console.WriteLine("Description: ");
+        product.Description = Console.ReadLine();
+        
+        //Dog Leash Info
         Console.WriteLine("Leash Length in inches: ");
         dogLeash.LengthInches = int.Parse(Console.ReadLine());
 
         Console.WriteLine("Material type: ");
         dogLeash.Material = (Console.ReadLine());
+
+        
 
         Console.WriteLine(JsonSerializer.Serialize(dogLeash));
     }
