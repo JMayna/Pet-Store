@@ -7,6 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.Json;
 
+//HomeWork 2: Step 7
+var productLogic = new ProductLogic();
+
 
 Console.WriteLine("Press 1 to add a product");
 Console.WriteLine("Type 'exit' to quit");
@@ -42,9 +45,11 @@ while (userInput.ToLower() != "exit") //While the user has not typed "exit" the 
         Console.WriteLine("Material type: ");
         dogLeash.Material = (Console.ReadLine());
 
-        
 
-        Console.WriteLine(JsonSerializer.Serialize(dogLeash));
+        //HomeWork 2: Step 8
+        productLogic.AddProduct(dogLeash);
+        //HomeWork 2: Step 9
+        Console.WriteLine("The Product was added.");
     }
     Console.WriteLine("Press 1 to add a product");
     Console.WriteLine("Type 'exit' to quit");
