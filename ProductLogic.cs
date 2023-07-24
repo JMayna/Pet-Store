@@ -12,13 +12,14 @@ namespace Pet_Store
         //HomeWork 2: Step 2
         private List<Product> _products;
         //HomeWork 2: Step 10
-        private Dictionary<string, DogLeash> dogLeashDictionary;
+        private Dictionary<string, DogLeash> _dogleashs = new Dictionary<string, DogLeash>();
 
-        private Dictionary<string, CatFood> catFoodDictionary;
+        private  Dictionary<string, CatFood> _catfoods = new Dictionary<string, CatFood>();
 
         //HomeWork 2: Step 3 (This is a constructor)
         public ProductLogic()
         {
+            _products = new List<Product>();
             
         }
         //HomeWork 2: Step 4
@@ -26,15 +27,15 @@ namespace Pet_Store
         {
             //HomeWork 2: Step 5
             _products.Add(product);
-            //HomeWork 2: Step 11 (HELP!!!!)
+            //HomeWork 2: Step 11 
             if (product is DogLeash)
             {
-               dogLeashDictionary.Add(product as DogLeash);
+               _dogleashs.Add(product.Name, product as DogLeash);
             }
 
             else if (product is CatFood)
             {
-                catFoodDictionary.Add(product as CatFood);
+                _catfoods.Add(product.Name, product as CatFood);
             }
 
            
@@ -45,9 +46,11 @@ namespace Pet_Store
             return _products; 
         }
 
+        //Homrwork 2: Step 14
         public DogLeash GetDogLeashByName(string name)
         {
-            
-        }
+            //Homework 2: Step 15
+            return _dogleashs[name];
+        }      
     }
 }

@@ -12,6 +12,7 @@ var productLogic = new ProductLogic();
 
 
 Console.WriteLine("Press 1 to add a product");
+Console.WriteLine("Press 2 to view a DogLeash");
 Console.WriteLine("Type 'exit' to quit");
 
 //Get User Input for Console
@@ -51,7 +52,17 @@ while (userInput.ToLower() != "exit") //While the user has not typed "exit" the 
         //HomeWork 2: Step 9
         Console.WriteLine("The Product was added.");
     }
+
+     if (userInput == "2")
+    {
+        Console.WriteLine("Which Dog Leash");
+        string dogLeashName = Console.ReadLine();
+        var dogleash = productLogic.GetDogLeashByName(dogLeashName);
+        Console.WriteLine(JsonSerializer.Serialize(dogleash));
+        Console.WriteLine();
+    }
     Console.WriteLine("Press 1 to add a product");
+    Console.WriteLine("Press 2 to view  a DogLeash");
     Console.WriteLine("Type 'exit' to quit");
     userInput = Console.ReadLine();
 }
