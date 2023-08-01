@@ -57,10 +57,10 @@ while (userInput.ToLower() != "exit") //While the user has not typed "exit" the 
     {
         Console.WriteLine("Enter the name of the Dog Leash you would like to get.");
         string dogLeashName = Console.ReadLine();
-        var dogleash = productLogic.GetDogLeashByName(dogLeashName);
-        if (dogLeashName == null)
+        DogLeash dogleash = productLogic.GetDogLeashByName(dogLeashName);
+        if(dogleash is null)
         {
-            Console.Write("That product could not be found");
+              Console.Write("That product could not be found");
         }
 
         else
