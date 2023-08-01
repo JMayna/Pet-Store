@@ -55,11 +55,20 @@ while (userInput.ToLower() != "exit") //While the user has not typed "exit" the 
 
      if (userInput == "2")
     {
-        Console.WriteLine("Which Dog Leash");
+        Console.WriteLine("Enter the name of the Dog Leash you would like to get.");
         string dogLeashName = Console.ReadLine();
         var dogleash = productLogic.GetDogLeashByName(dogLeashName);
-        Console.WriteLine(JsonSerializer.Serialize(dogleash));
-        Console.WriteLine();
+        if (dogLeashName == null)
+        {
+            Console.Write("That product could not be found");
+        }
+
+        else
+        {
+           Console.WriteLine(String.Format("Name: {0}\nPrice: {1}\nQuantity: {2}\nDescription: {3}\nMaterial: {4}\nLength(in): {5}",
+                dogleash.Name, dogleash.Price, dogleash.Quantity, dogleash.Description, dogleash.Material, dogleash.LengthInches));
+        }
+        
     }
     Console.WriteLine("Press 1 to add a product");
     Console.WriteLine("Press 2 to view  a DogLeash");

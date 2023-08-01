@@ -46,11 +46,19 @@ namespace Pet_Store
             return _products; 
         }
 
-        //Homrwork 2: Step 14
+        
         public DogLeash GetDogLeashByName(string name)
         {
-            //Homework 2: Step 15
-            return _dogleashs[name];
+            try
+            {
+                
+                return _dogleashs[name];
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            
         }      
     }
 }
