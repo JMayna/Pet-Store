@@ -31,7 +31,7 @@ namespace Pet_Store
                 },
                 new DogLeash
                 {
-                    Description = "An example descirption 2",
+                    Description = "An example desccirption 2",
                     LengthInches = 50,
                     Material = "Not silk",
                     Name = "Not silk dogleash",
